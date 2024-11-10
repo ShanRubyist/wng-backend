@@ -28,6 +28,12 @@ class Rack::Attack
     req.ip # unless req.path.start_with?('/assets')
   end
 
+  throttle('req/completion', limit: 10, period: 1.day) do |req|
+    if req.path == '/api/v1/openrouter/completion' && req.post?
+      req.ip
+    end
+  end
+
   ### Prevent Brute-Force Login Attacks ###
 
   # The most common brute-force login attack is a brute-force password

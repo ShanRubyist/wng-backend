@@ -30,6 +30,12 @@ Rails.application.routes.draw do
       get 'payment_info',to: 'info#payment_info'
       get 'active_subscription_info', to: 'info#active_subscription_info', as: 'active_subscription_info'
 
+      resources :openrouter do
+        collection do
+          post 'completion' => 'openrouter#completion', as: 'completion'
+        end
+      end
+
       resources :info do
         collection do
 

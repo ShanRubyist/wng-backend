@@ -1,0 +1,3 @@
+class ReplicatedCall < ApplicationRecord
+
+end

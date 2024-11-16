@@ -71,3 +71,5 @@ gem 'sidekiq'
 gem 'kaminari'
 
 gem "ruby-openai"
+
+gem 'googleauth'

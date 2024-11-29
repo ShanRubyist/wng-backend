@@ -1,0 +1,3 @@
+class NameBasedGeneratedLog < ApplicationRecord
+  belongs_to :user
+end

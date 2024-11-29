@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :openrouter do
         collection do
           post 'completion' => 'openrouter#completion', as: 'completion'
+          post 'name_based_generate' => 'name_generator#name_based_generate'
         end
       end
 

@@ -24,8 +24,7 @@ module CreditsCounter
   def used_credits(user, usage_klass_name)
     # TODO: refactor
     user.send(usage_klass_name)
-        .where("replicated_calls.data->>'status' = ?", 'succeeded')
-        .sum(:cost_credits)
+        .count()
   end
 
   def usage_classes
